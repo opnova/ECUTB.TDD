@@ -8,33 +8,46 @@ import org.junit.jupiter.api.Test;
 
 class BaseConverterTest {
 
-	@Test
-	void test1() throws ConversionException {
-		assertEquals(12, BaseConverter.toDecimal("1100"));
-	}
-	
-	@Test
-	void test2() throws ConversionException {
-		assertEquals(5, BaseConverter.toDecimal("101"));
-	}	
-	
-	@Test
-	void test_null() {
-		assertThrows(ConversionException.class, () -> BaseConverter.toDecimal(null));
-	}	
-	
-	@Test
-	void test_empty() {
-		assertThrows(ConversionException.class, () -> BaseConverter.toDecimal(""));
-	}
-	
-	@Test
-	void test_illegalCharacters() {
-		assertThrows(ConversionException.class, () -> BaseConverter.toDecimal("Z101"));
-	}		
+    @Test
+    void test1() throws ConversionException {
 
-	@Test
-	void test_trim() throws ConversionException {
-		assertEquals(5, BaseConverter.toDecimal(" 101 "));
-	}	
+        assertEquals(12, BaseConverter.toDecimal("1100"));
+
+    }
+
+    @Test
+    void test2() throws ConversionException {
+
+        assertEquals(5, BaseConverter.toDecimal("101"));
+
+    }
+
+    @Test
+    void test_null() {
+
+        assertThrows(ConversionException.class, () -> BaseConverter.toDecimal(null));
+
+    }
+
+    @Test
+    void test_empty() {
+
+        assertThrows(ConversionException.class, () -> BaseConverter.toDecimal(""));
+
+    }
+
+    @Test
+    void test_illegalCharacters() {
+
+        assertThrows(ConversionException.class, () -> BaseConverter.toDecimal("Z101"));
+
+    }
+
+    @Test
+    void test_trim() throws ConversionException {
+
+        assertEquals(5, BaseConverter.toDecimal(" 101 "));
+
+    }
+
 }

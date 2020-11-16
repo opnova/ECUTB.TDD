@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/lars.karlsson/Workspace/Zocom/Le 2020-11-16/MockitoLib/byte-buddy-1.9.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lars.karlsson/Workspace/Zocom/Le 2020-11-16/MockitoLib/byte-buddy-agent-1.9.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lars.karlsson/Workspace/Zocom/Le 2020-11-16/MockitoLib/mockito-core-2.25.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lars.karlsson/Workspace/Zocom/Le 2020-11-16/MockitoLib/objenesis-3.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -5,9 +5,16 @@ import java.util.Stack;
 public class Calc {
 
     private Stack<Double> stack;
+    private IWordProvider provider;
 
     public Calc() {
 
+        stack = new Stack<Double>();
+    }
+
+    public Calc(IWordProvider provider) {
+
+        this.provider = provider;
         stack = new Stack<Double>();
     }
 
@@ -96,6 +103,17 @@ public class Calc {
         }
 
         return stack.pop();
+    }
+    
+    public Double compute() throws ExpressionException {
+        Double calculated = 0.0;
+        
+        while( provider.hasMore()) {
+            String word = provider.nextWord();
+            // Mer kod
+        }
+        
+        return calculated;
     }
 
 }

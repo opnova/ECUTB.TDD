@@ -1,6 +1,5 @@
 package rpn;
 
-
 public class WordProvider implements IWordProvider {
 
     @Override

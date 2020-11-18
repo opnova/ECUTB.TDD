@@ -33,87 +33,92 @@ public class Calc {
             throw new ExpressionException("Kan inte vara tom");
         }
 
-        stack.empty();
+        stack.clear();
 
         String[] words = getWords(strExpr);
 
         for (int i = 0; i < words.length; i++) {
-            switch (words[i]) {
-            case "*":
-                if (stack.size() >= 2) {
-                    stack.push(stack.pop() * stack.pop());
-                } else {
-                    throw new ExpressionException("Det saknas operander!");
-                }
-                break;
-
-            case "-":
-                if (stack.size() >= 2) {
-                    stack.push(stack.pop() - stack.pop());
-                } else {
-                    throw new ExpressionException("Det saknas operander!");
-                }
-                break;
-
-            case "+":
-                if (stack.size() >= 2) {
-                    stack.push(stack.pop() + stack.pop());
-                } else {
-                    throw new ExpressionException("Det saknas operander!");
-                }
-                break;
-
-            case "/":
-                if (stack.size() >= 2) {
-                    stack.push(stack.pop() / stack.pop());
-                } else {
-                    throw new ExpressionException("Det saknas operander!");
-                }
-                break;
-
-            case "sqrt":
-                if (stack.size() >= 1) {
-                    stack.push(Math.sqrt(stack.pop()));
-                } else {
-                    throw new ExpressionException("Det saknas en operand!");
-                }
-                break;
-
-            case "sqr":
-                if (stack.size() >= 1) {
-                    stack.push(Math.pow(stack.pop(), 2));
-                } else {
-                    throw new ExpressionException("Det saknas en operand!");
-                }
-                break;
-
-            default:
-                try {
-
-                    Double dbl = Double.parseDouble(words[i]);
-                    stack.push(dbl);
-
-                } catch (NumberFormatException e) {
-                    throw new ExpressionException("Är inte ett tal eller en otillåten operator.");
-                }
-
-                break;
-            }
-
+            _compute(words[i]);
         }
 
         return stack.pop();
     }
     
     public Double compute() throws ExpressionException {
-        Double calculated = 0.0;
-        
-        while( provider.hasMore()) {
+
+        stack.clear();
+        while (provider.hasMore()) {
             String word = provider.nextWord();
-            // Mer kod
+            _compute(word);
+
         }
-        
-        return calculated;
+
+        return stack.pop();
+    }    
+
+    private void _compute(String word) throws ExpressionException {
+
+        switch (word) {
+        case "*":
+            if (stack.size() >= 2) {
+                stack.push(stack.pop() * stack.pop());
+            } else {
+                throw new ExpressionException("Det saknas operander!");
+            }
+            break;
+
+        case "-":
+            if (stack.size() >= 2) {
+                stack.push(stack.pop() - stack.pop());
+            } else {
+                throw new ExpressionException("Det saknas operander!");
+            }
+            break;
+
+        case "+":
+            if (stack.size() >= 2) {
+                stack.push(stack.pop() + stack.pop());
+            } else {
+                throw new ExpressionException("Det saknas operander!");
+            }
+            break;
+
+        case "/":
+            if (stack.size() >= 2) {
+                stack.push(stack.pop() / stack.pop());
+            } else {
+                throw new ExpressionException("Det saknas operander!");
+            }
+            break;
+
+        case "sqrt":
+            if (stack.size() >= 1) {
+                stack.push(Math.sqrt(stack.pop()));
+            } else {
+                throw new ExpressionException("Det saknas en operand!");
+            }
+            break;
+
+        case "sqr":
+            if (stack.size() >= 1) {
+                stack.push(Math.pow(stack.pop(), 2));
+            } else {
+                throw new ExpressionException("Det saknas en operand!");
+            }
+            break;
+
+        default:
+            try {
+
+                Double dbl = Double.parseDouble(word);
+                stack.push(dbl);
+
+            } catch (NumberFormatException e) {
+                throw new ExpressionException("Är inte ett tal eller en otillåten operator.");
+            }
+
+            break;
+        }
     }
 
 }

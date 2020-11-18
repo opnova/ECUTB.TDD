@@ -2,7 +2,6 @@ package rpn;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -74,6 +73,18 @@ class CalcTest {
 
         Calc cut = new Calc();
         assertThrows(ExpressionException.class, () -> cut.compute(null));
+    }
+    
+    @Test
+    void test_computeProvider() throws ExpressionException {
+        WordProviderStub stub = new WordProviderStub();
+        Calc cut = new Calc(stub);
+        
+        //21
+        stub.addWords("1 2 + 3 4 + *".split(" "));
+        
+        assertEquals(21, cut.compute());
+        
     }
 
 }

@@ -1,0 +1,20 @@
+Template Method
+---------------
+Algoritm för att kopiera något:
+
+    while( !isDone)
+        b = readByte()
+        writeByte(b)
+        
+Observer
+--------
+Vi har en AnalogDisplay och DigitalDisplay som båda vill få reda på när klockan/timer
+har gått en sekund framåt (1 tick).
+
+AnalogDisplay och DigitalDisplay observerar en Timer.
+AnalogDisplay och DigitalDisplay vill få reda på när ett tick har hänt av Timern.
+
+Uppgift 1
+---------
+Så fort IntArray ändras vill jag att min klass IntArrayObserver hämtar medelvärdet och skriver ut det.
+Skapa IntArrayObserver och förändra IntArray så att ovanstående är möjligt.

@@ -6,15 +6,29 @@ Algoritm för att kopiera något:
         b = readByte()
         writeByte(b)
         
-Observer
+Uppgift 1
 --------
 Vi har en AnalogDisplay och DigitalDisplay som båda vill få reda på när klockan/timer
 har gått en sekund framåt (1 tick).
 
-AnalogDisplay och DigitalDisplay observerar en Timer.
+AnalogDisplay och DigitalDisplay observerar en Timer.             
 AnalogDisplay och DigitalDisplay vill få reda på när ett tick har hänt av Timern.
 
-Uppgift 1
+Hur implementerar man detta? Vilket designmönster?
+
+Uppgift 2
 ---------
 Så fort IntArray ändras vill jag att min klass IntArrayObserver hämtar medelvärdet och skriver ut det.
 Skapa IntArrayObserver och förändra IntArray så att ovanstående är möjligt.
+Använd klassen från inlämningsuppgift 1.
+
+Uppgift 3
+---------
+Antag att vi har en klass XStatistics som implementerar metoden findLargest().  
+Vi känner till den generella algoritmen för hur man hittar det största. 
+Kan vi hitta något sätt att göra detta på utan att veta vad vi hittar det största av?
+Tips: Antingen Observer eller Template Method.
+
+
+
+

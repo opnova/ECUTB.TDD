@@ -1,33 +1,31 @@
 import java.util.ArrayList;
 
-public class MyStringArray extends XStatistics {
+public class MyStringArray extends XStatistics<String> {
+
     ArrayList<String> data = null;
 
     @Override
-    int getFirst() {
+    String getFirst() {
 
-        // TODO Auto-generated method stub
-        return 0;
+        return "";
     }
 
     @Override
-    int getNext() {
+    String getNext() {
 
-        // TODO Auto-generated method stub
-        return 0;
+        return "";
     }
 
     @Override
     boolean hasMore() {
 
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    boolean isLargerThan(int i1, int i2) {
+    boolean isLargerThan(String i1, String i2) {
 
-        // TODO Auto-generated method stub
         return false;
     }
+
 }

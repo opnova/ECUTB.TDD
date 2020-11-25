@@ -1,34 +1,29 @@
 
-
-public class MyIntArray extends XStatistics {
+public class MyIntArray extends XStatistics<Integer> {
 
     int[] data = null;
-    
-    @Override
-    int getFirst() {
 
-        // TODO Auto-generated method stub
+    @Override
+    Integer getFirst() {
+
         return 0;
     }
 
     @Override
-    int getNext() {
+    Integer getNext() {
 
-        // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
     boolean hasMore() {
 
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    boolean isLargerThan(int i1, int i2) {
+    boolean isLargerThan(Integer i1, Integer i2) {
 
-        // TODO Auto-generated method stub
         return false;
     }
 
